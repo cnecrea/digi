@@ -1,0 +1,135 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectează contul DIGI",
+        "description": "Introdu datele cu care intri pe digi.ro sau în aplicația MyDigi. După acest pas, DIGI trimite un cod prin SMS pe telefonul contului.",
+        "data": {
+          "username": "Email sau ID client",
+          "password": "Parola"
+        },
+        "data_description": {
+          "username": "Adresa de email a contului DIGI sau ID-ul de client.",
+          "password": "Se păstrează local, în Home Assistant; e folosită doar la reconectarea contului, când sesiunea DIGI expiră."
+        }
+      },
+      "two_factor": {
+        "title": "Codul primit prin SMS",
+        "description": "DIGI a trimis un cod de 6 cifre la numărul {phone}. Codul expiră în 2 minute.\n\nDacă nu l-ai primit, bifează „Trimite din nou codul” și apasă Trimite (un cod nou se poate cere după un minut).",
+        "data": {
+          "code": "Cod SMS",
+          "resend": "Trimite din nou codul"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reconectează contul DIGI",
+        "description": "Sesiunea DIGI a contului {username} a expirat, iar actualizările s-au oprit. Apasă Trimite: DIGI îți trimite un cod nou prin SMS.\n\nCompletează parola doar dacă ai schimbat-o între timp.",
+        "data": {
+          "password": "Parola nouă (opțional)"
+        }
+      },
+      "reconfigure": {
+        "title": "Schimbă datele contului DIGI",
+        "description": "Introdu noile date de autentificare. Urmează un cod prin SMS.",
+        "data": {
+          "username": "Email sau ID client",
+          "password": "Parola"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Autentificarea a eșuat. Verifică emailul (sau ID-ul de client) și parola — sunt aceleași ca pe digi.ro.",
+      "captcha": "DIGI cere acum o verificare anti-robot (captcha) la login, pe care integrarea nu o poate trece. Deschide un issue pe GitHub.",
+      "cannot_connect": "digi.ro nu a putut fi contactat. Verifică conexiunea la internet și încearcă din nou peste câteva minute.",
+      "login_failed": "DIGI a răspuns neașteptat la login. Activează jurnalizarea de depanare, încearcă din nou și caută detaliile în jurnal.",
+      "code_wait": "DIGI nu trimite încă un cod nou. Așteaptă un minut, apoi bifează „Trimite din nou codul”.",
+      "code_send_failed": "Codul SMS nu a putut fi trimis. Bifează „Trimite din nou codul” sau încearcă mai târziu.",
+      "code_required": "Introdu codul primit prin SMS sau bifează „Trimite din nou codul”.",
+      "code_not_sent": "Codul nu a fost trimis încă. Bifează „Trimite din nou codul”.",
+      "code_invalid": "Codul a fost respins. Verifică cele 6 cifre (codul expiră în 2 minute) sau cere unul nou.",
+      "code_failed": "Verificarea codului a eșuat. Cere un cod nou și încearcă din nou.",
+      "unknown": "A apărut o eroare neașteptată. Activează jurnalizarea de depanare pentru această integrare, încearcă din nou, apoi caută detaliile în jurnalul Home Assistant."
+    },
+    "abort": {
+      "already_configured": "Acest cont DIGI este deja adăugat în Home Assistant.",
+      "reauth_successful": "Contul a fost reconectat, iar actualizările au fost reluate.",
+      "reconfigure_successful": "Datele de autentificare au fost actualizate, iar integrarea s-a reîncărcat.",
+      "wrong_account": "Te-ai autentificat în alt cont DIGI decât cel configurat aici. Pentru un alt cont, adaugă integrarea din nou, ca intrare separată.",
+      "cannot_connect": "Datele contului nu au putut fi citite după autentificare. Încearcă din nou peste câteva minute.",
+      "unknown": "A apărut o eroare neașteptată. Activează jurnalizarea de depanare și încearcă din nou."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "licenta_necesara": {
+        "name": "Licență necesară"
+      },
+      "total_cont": {
+        "name": "Total de plată"
+      },
+      "date_client": {
+        "name": "Date client"
+      },
+      "total_adresa": {
+        "name": "Total de plată"
+      },
+      "ultima_factura": {
+        "name": "Ultima factură"
+      },
+      "arhiva_facturi": {
+        "name": "Arhivă facturi"
+      },
+      "internet": {
+        "name": "Internet"
+      },
+      "televiziune": {
+        "name": "Televiziune"
+      },
+      "servicii_active": {
+        "name": "Servicii active"
+      }
+    },
+    "binary_sensor": {
+      "factura_restanta": {
+        "name": "Factură restantă",
+        "state": {
+          "on": "Da",
+          "off": "Nu"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "licenta": {
+        "title": "Licență DIGI România",
+        "description": "{license_status}\n\nIntrodu cheia de licență pentru a activa sau reînnoi integrarea.",
+        "data": {
+          "license_key": "Cheie de licență"
+        },
+        "data_description": {
+          "license_key": "Cheia primită pe e-mail, de forma DIGI-XXXX-XXXX-XXXX-XXXX."
+        }
+      }
+    },
+    "error": {
+      "license_key_empty": "Introdu o cheie de licență.",
+      "license_key_invalid": "Cheie de licență invalidă. Verifică formatul și încearcă din nou.",
+      "license_already_used": "Această cheie de licență a fost deja folosită pe altă instalare.",
+      "license_key_expired": "Această cheie de licență a expirat.",
+      "license_fingerprint_mismatch": "Această cheie de licență este asociată altei instalări.",
+      "license_network_error": "Serverul de licențe nu poate fi contactat. Verifică conexiunea la internet și încearcă din nou.",
+      "license_server_error": "Eroare la serverul de licențe. Încearcă din nou mai târziu."
+    }
+  },
+  "issues": {
+    "trial_expired": {
+      "title": "Perioada de evaluare DIGI România s-a încheiat",
+      "description": "Perioada de evaluare gratuită pentru integrarea DIGI România s-a încheiat.\n\nSenzorii sunt dezactivați până la obținerea unei licențe.\n\n[Obține o licență]({learn_more_url})"
+    },
+    "license_expired": {
+      "title": "Licența DIGI România a expirat",
+      "description": "Licența pentru integrarea DIGI România a expirat.\n\nSenzorii sunt dezactivați până la reînnoirea licenței.\n\n[Reînnoiește licența]({learn_more_url})"
+    }
+  }
+}
