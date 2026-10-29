@@ -164,8 +164,8 @@ jobs:
         env:
           PAT: ${{ secrets.PAT_TOKEN }}
         run: |
-          git config user.name "digi-release-bot"
-          git config user.email "digi-bot@users.noreply.github.com"
+          git config user.name "digiromania-release-bot"
+          git config user.email "digiromania-bot@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${PAT}@github.com/cnecrea/digi.git
 
           git add custom_components/digi/manifest.json
