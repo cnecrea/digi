@@ -2,6 +2,12 @@
   "repo": "cnecrea/digi",
   "prima_colectare": "2026-10-30",
   "zilnic": {
+    "2026-10-16": {
+      "clones_total": 0,
+      "clones_unice": 0,
+      "views_total": 0,
+      "views_unice": 0
+    },
     "2026-10-17": {
       "clones_total": 0,
       "clones_unice": 0,
@@ -75,24 +81,31 @@
       "views_unice": 0
     },
     "2026-10-29": {
-      "clones_total": 0,
-      "clones_unice": 0,
-      "views_total": 0,
-      "views_unice": 0
+      "clones_total": 92,
+      "clones_unice": 29,
+      "views_total": 8,
+      "views_unice": 5
     },
     "2026-10-30": {
       "clones_total": 0,
       "clones_unice": 0,
       "views_total": 0,
       "views_unice": 0,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "watchers": 0,
-      "open_issues": 0
+      "open_issues": 0,
+      "referrers": [
+        {
+          "sursa": "github.com",
+          "vizite": 1,
+          "vizitatori_unici": 1
+        }
+      ]
     }
   },
   "releases": {
     "1.0.0": 1
   },
-  "ultima_actualizare": "2026-10-30T00:54:13Z"
+  "ultima_actualizare": "2026-10-30T12:00:34Z"
 }
